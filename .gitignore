@@ -1,0 +1,50 @@
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# GitHub Token (安全起见)
+github-token.txt
+token.txt
+
+# IDE files
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Dependency directories
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Temporary folders
+tmp/
+temp/
+
+# Comments system cache (如果添加缓存功能)
+.cache/
+.comments-cache/

@@ -1171,3 +1171,20 @@ header {
         display: none;
     }
 }
+
+/* ----- Twikoo toolbar icon clamp: prevent gigantic SVG/images in comment toolbar ----- */
+.tk-submit-action-icon { align-items: center; gap: 10px; }
+.tk-submit-action-icon .tk-icon button{
+  width:36px !important; height:36px !important; padding:0 !important;
+  display:inline-flex !important; align-items:center !important; justify-content:center !important;
+}
+.tk-submit-action-icon svg,
+.tk-submit-action-icon img{
+  width:22px !important; height:22px !important;
+  max-width:22px !important; max-height:22px !important;
+  object-fit:contain !important; display:inline-block !important;
+}
+/* Some Twikoo builds render svg directly as child of .tk-submit-action-icon */
+.tk-submit-action-icon > svg{ width:22px !important; height:22px !important; display:inline-block !important; }
+/* Emoji panel trigger (.OwO) should also be clamped */
+.OwO svg{ width:22px !important; height:22px !important; }

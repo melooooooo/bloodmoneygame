@@ -1,0 +1,108 @@
+{
+  "bloodmoney": [
+    {
+      "id": "demo_comment_1704067200000",
+      "author": "GamePlayer",
+      "email": "player@example.com",
+      "content": "Amazing psychological horror game! The moral dilemma really hits hard. Harvey's reactions are so realistic and make you question your choices.",
+      "timestamp": 1704067200000,
+      "votes": { "up": 12, "down": 2 },
+      "replies": [
+        {
+          "id": "demo_reply_1704067300000",
+          "author": "HorrorFan",
+          "content": "I agree! The way his personality changes as you progress is brilliant game design.",
+          "timestamp": 1704067300000,
+          "parent_id": "demo_comment_1704067200000"
+        }
+      ]
+    },
+    {
+      "id": "demo_comment_1704153600000",
+      "author": "EthicsGamer",
+      "email": "ethics@example.com",
+      "content": "This game made me think about real-world moral decisions. Simple mechanics but deep meaning.",
+      "timestamp": 1704153600000,
+      "votes": { "up": 8, "down": 1 },
+      "replies": []
+    },
+    {
+      "id": "temp_comment_1704249900000",
+      "author": "UXReviewer",
+      "email": "temp@example.com",
+      "content": "Sidebar test: form fields should be full width and the textarea comfortable for longer thoughts. Actions should be compact.",
+      "timestamp": 1704249900000,
+      "votes": { "up": 5, "down": 0 },
+      "replies": []
+    },
+    {
+      "id": "temp_comment_1704336300000",
+      "author": "Designer",
+      "email": "temp2@example.com",
+      "content": "Longer sample comment to validate wrapping and spacing. The text should not overflow; it should wrap and keep readable line-height within the 360px sidebar card. Looks good now.",
+      "timestamp": 1704336300000,
+      "votes": { "up": 9, "down": 1 },
+      "replies": []
+    }
+  ],
+  "bloodmoney-2": [
+    {
+      "id": "demo_comment_bm2_1704240000000",
+      "author": "SequelLover",
+      "email": "sequel@example.com",
+      "content": "The sequel is even more intense! 50+ methods and enhanced psychological consequences. Brilliant evolution of the original concept.",
+      "timestamp": 1704240000000,
+      "votes": { "up": 15, "down": 0 },
+      "replies": []
+    }
+  ],
+  "bloodmoney-unblocked": [],
+  "the-baby-in-yellow": [
+    {
+      "id": "demo_comment_baby_1704326400000",
+      "author": "CreepyGamer",
+      "email": "creepy@example.com",
+      "content": "That baby is terrifying! The atmosphere and sound design are top-notch horror.",
+      "timestamp": 1704326400000,
+      "votes": { "up": 22, "down": 1 },
+      "replies": []
+    }
+  ],
+  "buckshot-roulette": [
+    {
+      "id": "demo_comment_buckshot_1704412800000", 
+      "author": "RouletteFan",
+      "email": "roulette@example.com",
+      "content": "Nerve-wracking tension! Every decision could be your last. Perfect blend of strategy and luck.",
+      "timestamp": 1704412800000,
+      "votes": { "up": 18, "down": 3 },
+      "replies": []
+    }
+  ],
+  "scary-teacher-3d": [],
+  "granny-horror": [
+    {
+      "id": "demo_comment_granny_1704499200000",
+      "author": "SurvivalPlayer", 
+      "email": "survival@example.com",
+      "content": "Classic horror survival! Granny's AI is unpredictable and keeps you on edge throughout the game.",
+      "timestamp": 1704499200000,
+      "votes": { "up": 14, "down": 2 },
+      "replies": []
+    }
+  ],
+  "thats-not-my-neighbor": [
+    {
+      "id": "demo_comment_neighbor_1704585600000",
+      "author": "MysteryFan",
+      "email": "mystery@example.com", 
+      "content": "Love the detective work required! Figuring out who's real and who's fake is addictive.",
+      "timestamp": 1704585600000,
+      "votes": { "up": 19, "down": 1 },
+      "replies": []
+    }
+  ],
+  "we-become-what-we-behold": [],
+  "do-not-take-this-cat-home": [],
+  "italian-brainrot-clicker": []
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <!-- 原有的 head 内容保持不变 -->
+    <!-- ... existing meta tags, Google Analytics, etc ... -->
+    
+    <!-- 添加 Twikoo CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/twikoo@1.6.39/dist/twikoo.css">
+    
+    <!-- 保留原有的样式文件 -->
+    <link rel="stylesheet" type="text/css" href="rs/css/all.css?v=20250909">
+    <!-- 移除原有的 comments.css，因为 Twikoo 有自己的样式 -->
+    <!-- <link rel="stylesheet" type="text/css" href="rs/css/comments.css?v=20250909"> -->
+</head>
+<body>
+    <!-- 页面的其他内容保持不变 -->
+    <!-- ... game content, description, etc ... -->
+    
+    <!-- 替换评论部分 -->
+    <!-- 原来的代码：
+    <div class="comments-section-container">
+        <h2 style="margin-bottom: 20px;">Comments</h2>
+        <div id="comments-container">
+            Comments will be loaded here by JavaScript
+        </div>
+    </div>
+    -->
+    
+    <!-- 新的 Twikoo 评论部分 -->
+    <div class="comments-section-container">
+        <h2 style="margin-bottom: 20px;">💬 Comments</h2>
+        <!-- Twikoo 评论容器 -->
+        <div id="tcomment"></div>
+    </div>
+    
+    <!-- 页面底部脚本 -->
+    <!-- 移除原有的评论系统脚本 -->
+    <!-- 
+    <script src="rs/js/security.js"></script>
+    <script src="rs/js/github-api.js"></script>
+    <script src="rs/js/comments.js"></script>
+    -->
+    
+    <!-- 添加 Twikoo 脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.39/dist/twikoo.all.min.js"></script>
+    
+    <!-- 使用集成脚本初始化 Twikoo -->
+    <script src="rs/js/twikoo-init.js"></script>
+    
+    <!-- 或者直接内联初始化（适用于单个页面测试） -->
+    <script>
+        // 替换 YOUR_WORKER_URL 为实际部署的 Worker URL
+        const WORKER_URL = 'https://twikoo-bloodmoney.YOUR_USERNAME.workers.dev';
+        
+        if (typeof twikoo !== 'undefined' && !WORKER_URL.includes('YOUR_USERNAME')) {
+            twikoo.init({
+                envId: WORKER_URL,
+                el: '#tcomment',
+                lang: 'en-US',
+                path: '/games/bloodmoney-2', // 使用特定的游戏路径
+                visitor: true,
+                katex: false,
+                lightbox: true,
+                placeholder: 'Share your thoughts about BloodMoney 2...',
+                emoji: true,
+                pageSize: 10,
+                avatar: 'gravatar',
+                avatarCdn: 'https://gravatar.com/avatar/',
+                highlight: true,
+                highlightDays: 7,
+                meta: ['nick', 'mail', 'link'],
+                requiredMeta: ['nick', 'mail'],
+                nightMode: 'auto'
+            });
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+集成步骤说明：
+
+1. 在 <head> 部分：
+   - 添加 Twikoo CSS 链接
+   - 移除原有的 comments.css（可选，如果想保留一些自定义样式可以保留）
+
+2. 在评论区域：
+   - 将 <div id="comments-container"> 替换为 <div id="tcomment">
+   - 保留外层容器和标题样式
+
+3. 在脚本部分：
+   - 移除原有的评论系统脚本（security.js, github-api.js, comments.js）
+   - 添加 Twikoo 的 JavaScript 文件
+   - 添加初始化脚本（可以使用 twikoo-init.js 或内联代码）
+
+4. 配置说明：
+   - envId: 部署的 Twikoo Worker URL
+   - path: 使用 /games/[game-id] 格式，确保每个游戏的评论独立
+   - 其他配置可根据需要调整
+
+5. 迁移注意事项：
+   - 可以先在测试环境验证
+   - 保留原有评论系统代码作为备份
+   - 逐步在各个游戏页面推广
+-->

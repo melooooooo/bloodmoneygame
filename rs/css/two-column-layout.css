@@ -1,0 +1,324 @@
+/* Two-Column Layout CSS - Inspired by 1games.io/escape-road */
+
+/* Main Layout Container */
+.two-column-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* Left Column - Game Content */
+.game-content-column {
+    flex: 1 1 70%;
+    min-width: 0;
+}
+
+/* Right Column - Comments */
+.comments-column {
+    flex: 0 0 380px;
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Comments Column Scrollbar */
+.comments-column::-webkit-scrollbar {
+    width: 6px;
+}
+
+.comments-column::-webkit-scrollbar-track {
+    background: #e9ecef;
+    border-radius: 3px;
+}
+
+.comments-column::-webkit-scrollbar-thumb {
+    background: #adb5bd;
+    border-radius: 3px;
+}
+
+.comments-column::-webkit-scrollbar-thumb:hover {
+    background: #868e96;
+}
+
+/* Comments Section Styling */
+.comments-section-header {
+    padding: 16px 20px;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.comments-section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #212529;
+    margin: 0 0 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.comments-count {
+    background: #e74c3c;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Comment Form Redesign */
+.comment-form {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.comment-form-header {
+    font-size: 16px;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 12px;
+}
+
+.comment-input-group {
+    margin-bottom: 12px;
+}
+
+.comment-input,
+.comment-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Nunito Sans', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.comment-input:focus,
+.comment-textarea:focus {
+    outline: none;
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.comment-textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.comment-submit-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.comment-submit-btn:hover:not(:disabled) {
+    background: #c0392b;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+.comment-submit-btn:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+}
+
+/* Comments List */
+.comments-list {
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.comment-item {
+    padding: 12px;
+    margin-bottom: 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.comment-item:hover {
+    background: #e9ecef;
+}
+
+.comment-author {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.comment-date {
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-bottom: 8px;
+}
+
+.comment-content {
+    color: #34495e;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.comment-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.comment-action-btn {
+    background: none;
+    border: none;
+    color: #7f8c8d;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.comment-action-btn:hover {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.vote-count {
+    font-weight: 600;
+    color: #495057;
+}
+
+/* Empty Comments State */
+.no-comments {
+    text-align: center;
+    padding: 40px 20px;
+    color: #7f8c8d;
+}
+
+.no-comments-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.no-comments-text {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.no-comments-subtext {
+    font-size: 14px;
+    color: #95a5a6;
+}
+
+/* Loading State */
+.comments-loading {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #e9ecef;
+    border-top: 3px solid #e74c3c;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 12px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error State */
+.comments-error {
+    background: #fff5f5;
+    border: 1px solid #feb2b2;
+    color: #c53030;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+/* Success Message */
+.comment-success {
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+    color: #16a34a;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 1200px) {
+    .two-column-container {
+        gap: 20px;
+    }
+    
+    .comments-column {
+        flex: 0 0 340px;
+    }
+}
+
+@media (max-width: 992px) {
+    .two-column-container {
+        flex-direction: column;
+    }
+    
+    .game-content-column {
+        flex: 1 1 100%;
+    }
+    
+    .comments-column {
+        flex: 1 1 100%;
+        position: static;
+        max-height: none;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .two-column-container {
+        padding: 10px;
+    }
+    
+    .comments-column {
+        padding: 16px;
+    }
+    
+    .comments-section-title {
+        font-size: 18px;
+    }
+    
+    .comment-form {
+        padding: 12px;
+    }
+}

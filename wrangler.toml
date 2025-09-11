@@ -1,0 +1,35 @@
+# Cloudflare Worker Configuration for BloodMoney Comments API
+name = "bloodmoney-comments-api"
+main = "workers/comments-api.js"
+compatibility_date = "2024-01-01"
+
+# Worker routes
+routes = [
+  { pattern = "bloodmoney.ink/api/*", zone_name = "bloodmoney.ink" },
+  { pattern = "*.bloodmoney.ink/api/*", zone_name = "bloodmoney.ink" }
+]
+
+# KV Namespace for rate limiting (optional)
+# Create this namespace in Cloudflare dashboard first
+# [[kv_namespaces]]
+# binding = "COMMENTS_KV"
+# id = "your-kv-namespace-id"
+
+# Environment variables (set in Cloudflare dashboard)
+[vars]
+ALLOWED_ORIGIN = "https://bloodmoney.ink"
+GITHUB_OWNER = "melooooooo"
+GITHUB_REPO = "bloodmoneygame"
+GITHUB_BRANCH = "main"
+
+# Development environment
+[env.development]
+vars = { ALLOWED_ORIGIN = "*" }
+
+# Production environment
+[env.production]
+vars = { ALLOWED_ORIGIN = "https://bloodmoney.ink" }
+
+# Secrets (must be set via wrangler secret or Cloudflare dashboard)
+# wrangler secret put GITHUB_TOKEN
+# Enter your GitHub Personal Access Token when prompted

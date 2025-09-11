@@ -1,0 +1,43 @@
+{
+  "name": "bloodmoney-games-comments",
+  "version": "1.0.0",
+  "description": "BloodMoney Games website with integrated comments system",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build-config.js",
+    "dev": "echo 'Development server: Open index.html in browser'",
+    "test": "echo 'Testing: Open setup-github-token.html to test configuration'",
+    "deploy": "npm run build && echo 'Ready for Cloudflare Pages deployment'",
+    "clean": "rm -f rs/js/build-config.js",
+    "setup": "echo 'Setup: 1. Create GitHub token, 2. Open setup-github-token.html, 3. Run npm run build'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/melooooooo/bloodmoneygame.git"
+  },
+  "keywords": [
+    "bloodmoney",
+    "games",
+    "horror",
+    "comments-system",
+    "github-api",
+    "cloudflare-pages"
+  ],
+  "author": "melooooooo",
+  "license": "MIT",
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "cloudflare": {
+    "compatibility_date": "2023-05-18"
+  },
+  "buildCommand": "npm run build",
+  "publishDirectory": "./",
+  "environmentVariables": {
+    "GITHUB_TOKEN": "required",
+    "GITHUB_OWNER": "melooooooo", 
+    "GITHUB_REPO": "bloodmoneygame",
+    "GITHUB_BRANCH": "main"
+  }
+}
