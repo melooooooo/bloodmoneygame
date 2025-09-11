@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQL9GSF1T6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQL9GSF1T6');
+    </script>
+
     <!-- 原有的 head 内容保持不变 -->
     <!-- ... existing meta tags, Google Analytics, etc ... -->
-    
+
     <!-- 添加 Twikoo CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/twikoo@1.6.39/dist/twikoo.css">
-    
+
     <!-- 保留原有的样式文件 -->
     <link rel="stylesheet" type="text/css" href="rs/css/all.css?v=20250909">
     <!-- 移除原有的 comments.css，因为 Twikoo 有自己的样式 -->
@@ -15,7 +24,7 @@
 <body>
     <!-- 页面的其他内容保持不变 -->
     <!-- ... game content, description, etc ... -->
-    
+
     <!-- 替换评论部分 -->
     <!-- 原来的代码：
     <div class="comments-section-container">
@@ -25,33 +34,33 @@
         </div>
     </div>
     -->
-    
+
     <!-- 新的 Twikoo 评论部分 -->
     <div class="comments-section-container">
         <h2 style="margin-bottom: 20px;">💬 Comments</h2>
         <!-- Twikoo 评论容器 -->
         <div id="tcomment"></div>
     </div>
-    
+
     <!-- 页面底部脚本 -->
     <!-- 移除原有的评论系统脚本 -->
-    <!-- 
+    <!--
     <script src="rs/js/security.js"></script>
     <script src="rs/js/github-api.js"></script>
     <script src="rs/js/comments.js"></script>
     -->
-    
+
     <!-- 添加 Twikoo 脚本 -->
     <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.39/dist/twikoo.all.min.js"></script>
-    
+
     <!-- 使用集成脚本初始化 Twikoo -->
     <script src="rs/js/twikoo-init.js"></script>
-    
+
     <!-- 或者直接内联初始化（适用于单个页面测试） -->
     <script>
         // 替换 YOUR_WORKER_URL 为实际部署的 Worker URL
         const WORKER_URL = 'https://twikoo-bloodmoney.YOUR_USERNAME.workers.dev';
-        
+
         if (typeof twikoo !== 'undefined' && !WORKER_URL.includes('YOUR_USERNAME')) {
             twikoo.init({
                 envId: WORKER_URL,
@@ -77,7 +86,7 @@
 </body>
 </html>
 
-<!-- 
+<!--
 集成步骤说明：
 
 1. 在 <head> 部分：

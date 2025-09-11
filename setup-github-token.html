@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQL9GSF1T6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XQL9GSF1T6');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BloodMoney 评论系统 - GitHub Token 配置</title>
@@ -12,20 +21,20 @@
             padding: 20px;
             background: #f5f5f5;
         }
-        
+
         .container {
             background: white;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
+
         h1 {
             color: #003d78;
             border-bottom: 3px solid #0457a7;
             padding-bottom: 10px;
         }
-        
+
         .step {
             margin: 20px 0;
             padding: 15px;
@@ -33,12 +42,12 @@
             border-radius: 5px;
             border-left: 4px solid #0457a7;
         }
-        
+
         .step h3 {
             margin-top: 0;
             color: #0457a7;
         }
-        
+
         input[type="password"], input[type="text"] {
             width: 100%;
             padding: 10px;
@@ -48,7 +57,7 @@
             font-family: monospace;
             box-sizing: border-box;
         }
-        
+
         button {
             background: #0457a7;
             color: white;
@@ -59,11 +68,11 @@
             font-size: 16px;
             margin: 5px;
         }
-        
+
         button:hover {
             background: #003d78;
         }
-        
+
         .success {
             background: #d4edda;
             color: #155724;
@@ -72,7 +81,7 @@
             border: 1px solid #c3e6cb;
             margin: 10px 0;
         }
-        
+
         .error {
             background: #f8d7da;
             color: #721c24;
@@ -81,7 +90,7 @@
             border: 1px solid #f5c6cb;
             margin: 10px 0;
         }
-        
+
         .warning {
             background: #fff3cd;
             color: #856404;
@@ -90,14 +99,14 @@
             border: 1px solid #ffeaa7;
             margin: 10px 0;
         }
-        
+
         code {
             background: #f8f9fa;
             padding: 2px 4px;
             border-radius: 3px;
             font-family: monospace;
         }
-        
+
         .code-block {
             background: #f8f9fa;
             padding: 15px;
@@ -107,17 +116,17 @@
             margin: 10px 0;
             border: 1px solid #ddd;
         }
-        
+
         .status {
             margin: 15px 0;
             padding: 10px;
             border-radius: 5px;
         }
-        
+
         .hidden {
             display: none;
         }
-        
+
         .token-display {
             word-break: break-all;
             font-family: monospace;
@@ -127,23 +136,23 @@
             border: 1px solid #ddd;
             margin: 10px 0;
         }
-        
+
         .instructions {
             background: #e3f2fd;
             padding: 20px;
             border-radius: 5px;
             margin: 20px 0;
         }
-        
+
         .instructions h3 {
             color: #1976d2;
             margin-top: 0;
         }
-        
+
         .instructions ol {
             padding-left: 20px;
         }
-        
+
         .instructions li {
             margin: 5px 0;
         }
@@ -152,7 +161,7 @@
 <body>
     <div class="container">
         <h1>🔑 BloodMoney 评论系统 GitHub API 配置</h1>
-        
+
         <div class="instructions">
             <h3>📋 配置步骤</h3>
             <ol>
@@ -162,7 +171,7 @@
                 <li>保存配置到浏览器本地存储</li>
             </ol>
         </div>
-        
+
         <div class="step">
             <h3>第一步：创建 GitHub Personal Access Token</h3>
             <p>1. 访问 <a href="https://github.com/settings/tokens" target="_blank">GitHub Token 设置页面</a></p>
@@ -181,7 +190,7 @@ Repository permissions:
             </div>
             <p>4. 点击 "Generate token" 并复制生成的token</p>
         </div>
-        
+
         <div class="step">
             <h3>第二步：配置GitHub Token</h3>
             <label for="githubToken">GitHub Personal Access Token:</label>
@@ -189,40 +198,40 @@ Repository permissions:
             <button onclick="toggleTokenVisibility()">👁️ 显示/隐藏</button>
             <p><small>Token格式通常以 <code>ghp_</code> 开头，包含40-93个字符</small></p>
         </div>
-        
+
         <div class="step">
             <h3>第三步：验证GitHub仓库信息</h3>
             <label for="githubOwner">GitHub用户名 (你的实际用户名):</label>
             <input type="text" id="githubOwner" value="melooooooo">
-            
+
             <label for="githubRepo">仓库名称:</label>
             <input type="text" id="githubRepo" value="bloodmoneygame" readonly>
-            
+
             <label for="githubBranch">分支名称:</label>
             <input type="text" id="githubBranch" value="main" readonly>
         </div>
-        
+
         <div class="step">
             <h3>第四步：测试连接</h3>
             <button onclick="testGitHubConnection()">🧪 测试GitHub API连接</button>
             <button onclick="testRepositoryAccess()">📁 测试仓库访问权限</button>
             <div id="testResults"></div>
         </div>
-        
+
         <div class="step">
             <h3>第五步：保存配置</h3>
             <button onclick="saveConfiguration()">💾 保存到本地存储</button>
             <button onclick="clearConfiguration()">🗑️清除配置</button>
             <div id="saveResults"></div>
         </div>
-        
+
         <div class="step">
             <h3>第六步：验证评论系统</h3>
             <button onclick="testCommentsSystem()">✅ 测试评论系统集成</button>
             <button onclick="viewCurrentConfig()">⚙️ 查看当前配置</button>
             <div id="systemResults"></div>
         </div>
-        
+
         <div class="warning">
             <strong>⚠️ 安全提醒:</strong>
             <ul>
@@ -240,19 +249,19 @@ Repository permissions:
             const tokenInput = document.getElementById('githubToken');
             tokenInput.type = tokenInput.type === 'password' ? 'text' : 'password';
         }
-        
+
         // 测试GitHub API连接
         async function testGitHubConnection() {
             const token = document.getElementById('githubToken').value;
             const resultsDiv = document.getElementById('testResults');
-            
+
             if (!token) {
                 resultsDiv.innerHTML = '<div class="error">❌ 请先输入GitHub Token</div>';
                 return;
             }
-            
+
             resultsDiv.innerHTML = '<div class="status">🔄 正在测试GitHub API连接...</div>';
-            
+
             try {
                 const response = await fetch('https://api.github.com/user', {
                     headers: {
@@ -260,7 +269,7 @@ Repository permissions:
                         'Accept': 'application/vnd.github.v3+json'
                     }
                 });
-                
+
                 if (response.ok) {
                     const userData = await response.json();
                     resultsDiv.innerHTML = `
@@ -284,21 +293,21 @@ Repository permissions:
                 resultsDiv.innerHTML = `<div class="error">❌ 连接测试失败: ${error.message}</div>`;
             }
         }
-        
+
         // 测试仓库访问权限
         async function testRepositoryAccess() {
             const token = document.getElementById('githubToken').value;
             const owner = document.getElementById('githubOwner').value;
             const repo = document.getElementById('githubRepo').value;
             const resultsDiv = document.getElementById('testResults');
-            
+
             if (!token) {
                 resultsDiv.innerHTML = '<div class="error">❌ 请先输入GitHub Token</div>';
                 return;
             }
-            
+
             resultsDiv.innerHTML = '<div class="status">🔄 正在测试仓库访问权限...</div>';
-            
+
             try {
                 // 测试仓库基本信息
                 const repoResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}`, {
@@ -307,11 +316,11 @@ Repository permissions:
                         'Accept': 'application/vnd.github.v3+json'
                     }
                 });
-                
+
                 if (!repoResponse.ok) {
                     throw new Error(`仓库访问失败: ${repoResponse.status}`);
                 }
-                
+
                 // 测试文件访问权限
                 const fileResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/data/comments.json`, {
                     headers: {
@@ -319,10 +328,10 @@ Repository permissions:
                         'Accept': 'application/vnd.github.v3+json'
                     }
                 });
-                
+
                 const repoData = await repoResponse.json();
                 const fileExists = fileResponse.ok;
-                
+
                 resultsDiv.innerHTML = `
                     <div class="success">
                         ✅ 仓库访问权限验证成功！<br>
@@ -336,7 +345,7 @@ Repository permissions:
                 resultsDiv.innerHTML = `<div class="error">❌ 仓库访问测试失败: ${error.message}</div>`;
             }
         }
-        
+
         // 保存配置
         function saveConfiguration() {
             const token = document.getElementById('githubToken').value;
@@ -344,22 +353,22 @@ Repository permissions:
             const repo = document.getElementById('githubRepo').value;
             const branch = document.getElementById('githubBranch').value;
             const resultsDiv = document.getElementById('saveResults');
-            
+
             if (!token) {
                 resultsDiv.innerHTML = '<div class="error">❌ 请先输入GitHub Token</div>';
                 return;
             }
-            
+
             try {
                 // 保存到localStorage
                 localStorage.setItem('github_token', token);
                 localStorage.setItem('github_owner', owner);
                 localStorage.setItem('github_repo', repo);
                 localStorage.setItem('github_branch', branch);
-                
+
                 // 设置全局变量供评论系统使用
                 window.GITHUB_TOKEN = token;
-                
+
                 resultsDiv.innerHTML = `
                     <div class="success">
                         ✅ 配置已保存到浏览器本地存储<br>
@@ -371,7 +380,7 @@ Repository permissions:
                 resultsDiv.innerHTML = `<div class="error">❌ 配置保存失败: ${error.message}</div>`;
             }
         }
-        
+
         // 清除配置
         function clearConfiguration() {
             try {
@@ -379,20 +388,20 @@ Repository permissions:
                 localStorage.removeItem('github_owner');
                 localStorage.removeItem('github_repo');
                 localStorage.removeItem('github_branch');
-                
+
                 delete window.GITHUB_TOKEN;
-                
+
                 document.getElementById('githubToken').value = '';
                 document.getElementById('saveResults').innerHTML = '<div class="warning">⚠️ 配置已清除</div>';
             } catch (error) {
                 document.getElementById('saveResults').innerHTML = `<div class="error">❌ 配置清除失败: ${error.message}</div>`;
             }
         }
-        
+
         // 测试评论系统集成
         function testCommentsSystem() {
             const resultsDiv = document.getElementById('systemResults');
-            
+
             // 检查评论系统是否可用
             if (typeof window.CommentsSystem === 'undefined') {
                 resultsDiv.innerHTML = `
@@ -403,11 +412,11 @@ Repository permissions:
                 `;
                 return;
             }
-            
+
             // 检查配置
             const hasToken = !!localStorage.getItem('github_token');
             const hasConfig = window.configManager ? window.configManager.validate() : null;
-            
+
             resultsDiv.innerHTML = `
                 <div class="${hasToken ? 'success' : 'error'}">
                     ${hasToken ? '✅' : '❌'} GitHub Token: ${hasToken ? '已配置' : '未配置'}<br>
@@ -416,20 +425,20 @@ Repository permissions:
                 </div>
             `;
         }
-        
+
         // 查看当前配置
         function viewCurrentConfig() {
             const resultsDiv = document.getElementById('systemResults');
-            
+
             const config = {
                 token: localStorage.getItem('github_token'),
                 owner: localStorage.getItem('github_owner'),
                 repo: localStorage.getItem('github_repo'),
                 branch: localStorage.getItem('github_branch')
             };
-            
+
             const hasFullConfig = Object.values(config).every(val => val);
-            
+
             resultsDiv.innerHTML = `
                 <div class="${hasFullConfig ? 'success' : 'warning'}">
                     <h4>当前配置状态:</h4>
@@ -442,14 +451,14 @@ Repository permissions:
                 </div>
             `;
         }
-        
+
         // 页面加载时恢复保存的配置
         document.addEventListener('DOMContentLoaded', function() {
             const savedToken = localStorage.getItem('github_token');
             const savedOwner = localStorage.getItem('github_owner');
             const savedRepo = localStorage.getItem('github_repo');
             const savedBranch = localStorage.getItem('github_branch');
-            
+
             if (savedToken) {
                 document.getElementById('githubToken').value = savedToken;
             }
@@ -462,7 +471,7 @@ Repository permissions:
             if (savedBranch) {
                 document.getElementById('githubBranch').value = savedBranch;
             }
-            
+
             // 如果有保存的配置，显示状态
             if (savedToken) {
                 document.getElementById('saveResults').innerHTML = '<div class="success">🔄 检测到已保存的配置</div>';
