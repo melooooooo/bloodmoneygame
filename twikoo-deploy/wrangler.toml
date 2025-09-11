@@ -1,0 +1,27 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "twikoo-bloodmoney"
+main = "src/index.js"
+compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2024-09-23"
+
+[[d1_databases]]
+binding = "DB" # available in your Worker on env.DB
+database_name = "twikoo-bloodmoney"
+database_id = "YOUR_DATABASE_ID_HERE" # 需要在创建数据库后更新
+
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "twikoo-bloodmoney"
+
+[vars]
+# R2存储桶的公开URL（创建后更新）
+R2_PUBLIC_URL = "https://twikoo-bloodmoney.YOUR_ACCOUNT.r2.cloudflarestorage.com"
+# 站点配置
+SITE_NAME = "BloodMoney Games"
+SITE_URL = "https://bloodmoney.ink"
+# 邮件通知配置（可选）
+SENDER_EMAIL = "noreply@bloodmoney.ink"
+SENDER_NAME = "BloodMoney Comments"
+
+[dev]
+port = 5000
