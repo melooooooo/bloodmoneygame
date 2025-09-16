@@ -619,6 +619,50 @@ header {
     background-color: #941413;
 }
 
+/* --- Header logo/image layout for content pages (Privacy/Terms/About) --- */
+/* Those pages use a different header markup (logo-img + text-logo). Without
+   explicit styles the logo image renders too large and stacks vertically. */
+header .container > .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo .logo-img {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+}
+
+header .logo .logo-img img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+/* Match the visual treatment of the index header title */
+.text-logo {
+    color: #fff;
+    text-shadow: 0 0 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    filter: drop-shadow(0 0 3px #0457a7) drop-shadow(3px 3px 0 #0457a7) drop-shadow(-3px 3px 0 #0457a7) drop-shadow(3px -3px 0 #0457a7) drop-shadow(-3px -3px 0 #0457a7);
+}
+
+/* Ensure the simple nav used on these pages sits inline */
+.nav-controler > ul {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 600px) {
+    header .logo .logo-img img { height: 44px; }
+    .text-logo { font-size: 1.25rem; }
+}
+
 .search-desktop {
     position: absolute;
     right: 0;
