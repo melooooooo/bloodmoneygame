@@ -770,8 +770,7 @@ header .logo .logo-img img {
     height: 100%;
     border-radius: 8px;
     overflow: hidden;
-    background: #0457a7 url(../imgs/uk-loading-game.gif) center no-repeat;
-    background-size: 40px 40px;
+    background: #0457a7;
     position: relative;
 }
 
