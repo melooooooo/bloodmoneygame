@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // 功能开关
             uploadImage: false, // 禁用图片上传
-            emoji: true, // 启用表情
+            emoji: false, // 关闭表情面板，保持界面简洁
 
             // 其他配置
             highlight: true, // 代码高亮
@@ -38,13 +38,10 @@ document.addEventListener('DOMContentLoaded', function() {
             locale: {
                 'nick': 'Nickname',
                 'mail': 'Email',
-                'link': 'Website', // 虽然隐藏了，但保留配置
+                'link': 'Website',
                 'placeholder': 'Share your thoughts about this game...',
                 'noComment': 'No comments yet',
                 'submit': 'Send',
-                'preview': 'Preview',
-                'emoji': 'Emoji',
-                'uploadImage': 'Upload Image',
                 'loading': 'Loading...',
                 'error': 'Failed to load comments',
                 'replyTo': 'Reply to',

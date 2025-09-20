@@ -1,523 +1,318 @@
-/* Twikoo 评论系统自定义样式 - 完全重构版 */
+/* Twikoo 评论系统自定义样式 */
 
-/* 整体容器调整 */
-.twikoo {
-    font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-    width: 100% !important;
+.comments-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background: rgba(10, 18, 33, 0.95);
+    border-radius: 20px;
+    border: 1px solid rgba(54, 88, 148, 0.45);
+    padding: 28px;
+    box-shadow: 0 20px 48px rgba(5, 12, 24, 0.4);
+    backdrop-filter: blur(10px);
 }
 
-/* 评论输入区域整体布局 */
-.tk-submit {
-    padding: 20px !important;
-    background: #f8f9fa !important;
-    border-radius: 12px !important;
-    margin-bottom: 20px !important;
-    display: block !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
+.comments-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-/* 移除头像以获得更多空间 */
-.tk-submit .tk-avatar {
-    display: none !important;
-}
-
-/* 输入框的主容器 */
-.tk-submit .tk-main {
-    width: 100% !important;
-}
-
-/* 关键修复：将输入框容器改为块级布局 */
-.tk-row {
-    display: block !important;
-    width: 100% !important;
-    margin-bottom: 15px !important;
-}
-
-/* 每个输入框包装器 - 确保独占一行 */
-.tk-col {
-    display: block !important;
-    width: 100% !important;
-    margin-bottom: 15px !important;
-    float: none !important;
-    clear: both !important;
-}
-
-/* 输入框标签 - 确保在输入框上方 */
-.tk-col label,
-.tk-label,
-.tk-input-label {
-    display: block !important;
-    width: 100% !important;
-    margin-bottom: 8px !important;
-    font-size: 14px !important;
-    color: #495057 !important;
-    font-weight: 500 !important;
-    text-align: left !important;
-}
-
-/* 所有输入框样式 */
-.tk-input,
-input.tk-input,
-.tk-input[type="text"],
-.tk-input[type="email"],
-.tk-input[type="url"] {
-    display: block !important;
-    width: 100% !important;
-    padding: 12px 15px !important;
-    border: 1px solid #dee2e6 !important;
-    border-radius: 8px !important;
-    font-size: 14px !important;
-    transition: all 0.3s ease !important;
-    background: white !important;
-    box-sizing: border-box !important;
-    margin: 0 !important;
-}
-
-/* 输入框获得焦点时 */
-.tk-input:focus {
-    outline: none !important;
-    border-color: #0457a7 !important;
-    box-shadow: 0 0 0 3px rgba(4, 87, 167, 0.1) !important;
-}
-
-/* 特别针对昵称输入框 */
-.tk-input[name="nick"],
-.tk-input[placeholder*="Nickname"],
-.tk-input[placeholder*="昵称"],
-.tk-input[placeholder*="nick"] {
-    display: block !important;
-    width: 100% !important;
-}
-
-/* 特别针对邮箱输入框 */
-.tk-input[name="mail"],
-.tk-input[type="email"],
-.tk-input[placeholder*="Email"],
-.tk-input[placeholder*="邮箱"],
-.tk-input[placeholder*="mail"] {
-    display: block !important;
-    width: 100% !important;
-}
-
-/* 超级彻底地隐藏Website输入框 */
-.tk-col:nth-child(3),
-.tk-col:has(.tk-input[type="url"]),
-.tk-col:has(.tk-input[name="link"]),
-.tk-col:has(.tk-input[name="url"]),
-.tk-input[type="url"],
-.tk-input[name="link"],
-.tk-input[name="url"],
-.tk-input[placeholder*="Website"],
-.tk-input[placeholder*="网站"],
-.tk-input[placeholder*="site"],
-.tk-input[placeholder*="http"],
-label[for*="link"],
-label[for*="url"],
-label:contains("Website"),
-.tk-col:last-child:nth-child(3) {
-    display: none !important;
-    visibility: hidden !important;
-    width: 0 !important;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-    position: absolute !important;
-    left: -99999px !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-}
-
-/* 文本域样式 */
-.tk-textarea-wrapper {
-    margin-bottom: 15px !important;
-    width: 100% !important;
-    display: block !important;
-}
-
-.tk-textarea,
-textarea.tk-textarea {
-    display: block !important;
-    width: 100% !important;
-    min-height: 120px !important;
-    padding: 12px 15px !important;
-    border: 1px solid #dee2e6 !important;
-    border-radius: 8px !important;
-    font-size: 14px !important;
-    resize: vertical !important;
-    transition: all 0.3s ease !important;
-    background: white !important;
-    font-family: inherit !important;
-    box-sizing: border-box !important;
-}
-
-.tk-textarea:focus {
-    outline: none !important;
-    border-color: #0457a7 !important;
-    box-shadow: 0 0 0 3px rgba(4, 87, 167, 0.1) !important;
-}
-
-/* 底部按钮区域 */
-.tk-submit-action-icon {
+.comments-column .comments-section-header {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    margin-top: 15px !important;
-    width: 100% !important;
+    gap: 14px !important;
+    margin: 0 !important;
+    padding-bottom: 16px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
-/* 左侧工具按钮组 */
-.tk-submit-action-icon .tk-icon {
+.comments-column .comments-section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    color: #f4f7ff !important;
+    margin: 0 !important;
+}
+
+.comments-column .comments-count {
     display: inline-flex !important;
-    gap: 10px !important;
-}
-
-/* 发送按钮样式 */
-.tk-send,
-button.tk-send,
-.tk-submit-action-icon .tk-send {
-    background: #0457a7 !important;
-    color: white !important;
-    border: none !important;
-    padding: 10px 30px !important;
-    border-radius: 22px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 42px !important;
+    padding: 4px 16px !important;
+    border-radius: 999px !important;
+    background: #7fb4ff !important;
+    color: #0b1730 !important;
+    font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
     font-weight: 600 !important;
-    font-size: 14px !important;
-    cursor: pointer !important;
-    transition: all 0.3s ease !important;
-    margin-left: auto !important;
-}
-
-.tk-send:hover,
-button.tk-send:hover {
-    background: #035a9e !important;
-    transform: translateY(-1px) !important;
-    box-shadow: 0 4px 12px rgba(4, 87, 167, 0.3) !important;
-}
-
-/* 预览按钮 */
-.tk-preview,
-button.tk-preview {
-    background: transparent !important;
-    color: #6c757d !important;
-    border: 1px solid #dee2e6 !important;
-    padding: 8px 20px !important;
-    border-radius: 20px !important;
-    font-size: 14px !important;
-    transition: all 0.3s ease !important;
-    cursor: pointer !important;
-}
-
-.tk-preview:hover {
-    background: #f8f9fa !important;
-    border-color: #adb5bd !important;
-}
-
-/* 表情和图片按钮 */
-.tk-icon button {
-    background: transparent !important;
+    letter-spacing: 0.2px !important;
     border: none !important;
-    color: #6c757d !important;
-    cursor: pointer !important;
-    padding: 8px !important;
-    transition: all 0.2s ease !important;
 }
 
-.tk-icon button:hover {
-    color: #495057 !important;
-    background: #f8f9fa !important;
-    border-radius: 4px !important;
+.comments-column .twikoo {
+    font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-size: 15px !important;
+    color: #e6eeff !important;
 }
 
-/* 输入框占位符文字 */
-.tk-input::placeholder,
-.tk-textarea::placeholder {
-    color: #adb5bd !important;
-    font-size: 14px !important;
+.comments-column .twikoo a {
+    color: #9ec4ff !important;
 }
 
-/* 评论列表样式 */
-.tk-comment {
-    padding: 20px !important;
-    background: white !important;
-    border-radius: 8px !important;
-    margin-bottom: 15px !important;
-    border: 1px solid #e9ecef !important;
-}
-
-/* 评论内容 */
-.tk-content {
-    font-size: 14px !important;
-    line-height: 1.6 !important;
-    color: #495057 !important;
-}
-
-/* 评论者名字 */
-.tk-nick {
-    font-weight: 600 !important;
-    color: #212529 !important;
-    font-size: 14px !important;
-}
-
-/* 评论时间 */
-.tk-time {
-    color: #6c757d !important;
-    font-size: 12px !important;
-}
-
-/* 加载更多按钮 */
-.tk-expand {
-    background: #f8f9fa !important;
-    color: #495057 !important;
-    border: 1px solid #dee2e6 !important;
-    padding: 10px 30px !important;
-    border-radius: 20px !important;
-    font-size: 14px !important;
-    margin: 20px auto !important;
-    display: block !important;
-    transition: all 0.3s ease !important;
-    cursor: pointer !important;
-}
-
-.tk-expand:hover {
-    background: #e9ecef !important;
-    border-color: #adb5bd !important;
-}
-
-/* 字数统计 */
-.tk-word-num {
-    color: #6c757d !important;
-    font-size: 12px !important;
-    text-align: right !important;
-    margin-top: 5px !important;
-}
-
-/* 表情选择器 */
-.tk-owo-emotion {
-    background: white !important;
-    border: 1px solid #dee2e6 !important;
-    border-radius: 8px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-}
-
-/* 管理面板链接 */
-.tk-admin-config {
-    color: #6c757d !important;
-    font-size: 12px !important;
-}
-
-/* 无评论时的提示 */
-.tk-empty {
-    text-align: center !important;
-    padding: 40px 20px !important;
-    color: #6c757d !important;
-    font-size: 14px !important;
-}
-
-/* Powered by 链接样式 */
-.tk-power {
-    text-align: center !important;
-    margin-top: 20px !important;
-    padding-top: 20px !important;
-    border-top: 1px solid #e9ecef !important;
-    font-size: 12px !important;
-    color: #adb5bd !important;
-}
-
-.tk-power a {
-    color: #0457a7 !important;
-    text-decoration: none !important;
-}
-
-.tk-power a:hover {
+.comments-column .twikoo a:hover {
+    color: #ffffff !important;
     text-decoration: underline !important;
 }
 
-/* 响应式调整 */
-@media (max-width: 768px) {
-    .tk-submit {
-        padding: 15px !important;
-    }
-
-    .tk-input[type="text"],
-    .tk-input[type="email"],
-    .tk-textarea {
-        font-size: 16px !important; /* 防止iOS缩放 */
-    }
-
-    .tk-submit-action-icon {
-        flex-direction: column !important;
-        gap: 10px !important;
-    }
-
-    .tk-submit-action-icon .tk-send {
-        width: 100% !important;
-        margin: 10px 0 0 0 !important;
-    }
+.twikoo {
+    line-height: 1.6 !important;
 }
 
-/* 超级重要：强制覆盖任何可能的flex布局 */
-.tk-comments-container .tk-row,
-.tk-submit .tk-row,
-.twikoo .tk-row,
-#tcomment .tk-row {
-    display: block !important;
-    flex-direction: unset !important;
-    flex-wrap: unset !important;
-    align-items: unset !important;
-    justify-content: unset !important;
+.twikoo .tk-submit,
+.twikoo .tk-comment,
+.twikoo .tk-comments-container,
+.twikoo .tk-replies,
+.twikoo .el-card {
+    background: rgba(15, 26, 45, 0.94) !important;
+    border: 1px solid rgba(88, 132, 203, 0.35) !important;
+    border-radius: 16px !important;
+    box-shadow: none !important;
 }
 
-/* 超级重要：强制每个输入框容器为块级元素 */
-.tk-comments-container .tk-col,
-.tk-submit .tk-col,
-.twikoo .tk-col,
-#tcomment .tk-col {
-    display: block !important;
-    flex: unset !important;
-    flex-basis: unset !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    float: none !important;
-    clear: both !important;
-    margin-bottom: 15px !important;
+.twikoo .tk-submit {
+    padding: 24px !important;
+    margin-bottom: 22px !important;
 }
 
-/* 最后的保险：使用!important确保标签在上，输入框在下 */
-.tk-col > label {
-    display: block !important;
-    margin-bottom: 8px !important;
-}
-
-.tk-col > input,
-.tk-col > .tk-input {
+.twikoo .tk-row {
     display: block !important;
     width: 100% !important;
-    margin-top: 0 !important;
 }
 
-/* 针对可能的内联样式覆盖 */
-.tk-col[style*="display: flex"] {
+.twikoo .tk-col {
     display: block !important;
-}
-
-.tk-col[style*="display:flex"] {
-    display: block !important;
-}
-
-/* 深色主题兼容 */
-@media (prefers-color-scheme: dark) {
-    .tk-submit {
-        background: #2c3e50 !important;
-    }
-
-    .tk-input,
-    .tk-textarea {
-        background: #34495e !important;
-        border-color: #495057 !important;
-        color: #ecf0f1 !important;
-    }
-
-    .tk-comment {
-        background: #2c3e50 !important;
-        border-color: #34495e !important;
-    }
-
-    .tk-content {
-        color: #ecf0f1 !important;
-    }
-}
-
-/* 终极解决方案：使用CSS Grid强制垂直布局 */
-.tk-row {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 15px !important;
     width: 100% !important;
+    margin-bottom: 16px !important;
 }
 
-.tk-col {
-    grid-column: 1 !important;
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 8px !important;
+.twikoo .tk-meta,
+.twikoo .tk-meta-input,
+.twikoo .tk-submit .tk-meta {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
 }
 
-/* 确保标签和输入框垂直排列 */
-.tk-col > * {
-    grid-column: 1 !important;
+.twikoo .tk-col label,
+.twikoo label.tk-label,
+.twikoo .tk-input-label {
+    display: block !important;
+    margin-bottom: 6px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.4px !important;
+    color: rgba(211, 224, 255, 0.85) !important;
+    text-transform: uppercase !important;
 }
 
-/* 隐藏第三个输入框（Website）- 使用grid方式 */
-.tk-row > .tk-col:nth-child(3) {
+.twikoo .tk-input,
+.twikoo .tk-input[type="text"],
+.twikoo .tk-input[type="email"],
+.twikoo .tk-input[type="url"],
+.twikoo input.tk-input,
+.twikoo textarea.tk-textarea,
+.twikoo .tk-textarea {
+    display: block !important;
+    width: 100% !important;
+    padding: 12px 16px !important;
+    border: 1px solid rgba(95, 142, 212, 0.35) !important;
+    border-radius: 12px !important;
+    background: rgba(10, 19, 34, 0.95) !important;
+    color: #f5f8ff !important;
+    box-sizing: border-box !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+    caret-color: #7fb4ff !important;
+}
+
+.twikoo .tk-input:focus,
+.twikoo .tk-textarea:focus {
+    outline: none !important;
+    border-color: rgba(127, 180, 255, 0.95) !important;
+    box-shadow: 0 0 0 3px rgba(127, 180, 255, 0.2) !important;
+}
+
+.twikoo .tk-input::placeholder,
+.twikoo .tk-textarea::placeholder {
+    color: rgba(201, 214, 240, 0.65) !important;
+}
+
+.twikoo .tk-textarea,
+.twikoo textarea.tk-textarea {
+    min-height: 150px !important;
+    resize: vertical !important;
+}
+
+.twikoo .tk-avatar,
+.twikoo .tk-submit .tk-avatar {
     display: none !important;
-    grid-column: unset !important;
 }
 
-/* ===== BloodMoney Final Overrides: Blue background + white text, stacked meta, show Website ===== */
-/* Scope to sidebar Twikoo only to avoid global leakage */
-.bm-sidebar .comments-section-container{ background:#0457a7 !important; color:#fff !important; border:1px solid rgba(255,255,255,.25) !important; border-radius:12px !important; padding:20px !important; }
-.bm-sidebar #tcomment .twikoo, .bm-sidebar #tcomment .twikoo .tk-main, .bm-sidebar #tcomment .twikoo .tk-comments, .bm-sidebar #tcomment .twikoo .tk-comments-container, .bm-sidebar #tcomment .twikoo .el-card{ background:transparent !important; box-shadow:none !important; border:none !important; }
-.bm-sidebar #tcomment .twikoo{ color:#fff !important; }
-.bm-sidebar #tcomment .twikoo a{ color:#d6eaff !important; }
-.bm-sidebar #tcomment .twikoo a:hover{ color:#fff !important; text-decoration:underline !important; }
-
-/* Submit panel & comments list item */
-.bm-sidebar #tcomment .tk-submit, .bm-sidebar #tcomment .tk-comment{ background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.25) !important; border-radius:12px !important; padding:12px !important; }
-.bm-sidebar #tcomment .tk-nick{ color:#fff !important; font-weight:600 !important; }
-.bm-sidebar #tcomment .tk-time, .bm-sidebar #tcomment .tk-footer, .bm-sidebar #tcomment .tk-meta, .bm-sidebar #tcomment .tk-counter{ color:rgba(255,255,255,.85) !important; }
-.bm-sidebar #tcomment .tk-content{ color:#fff !important; }
-
-/* Inputs and textarea */
-.bm-sidebar #tcomment input, .bm-sidebar #tcomment textarea, .bm-sidebar #tcomment .el-input__inner, .bm-sidebar #tcomment .el-textarea__inner, .bm-sidebar #tcomment .tk-input{
-  background:rgba(255,255,255,.12) !important; border:2px solid rgba(255,255,255,.35) !important; color:#fff !important; padding:8px 12px !important; border-radius:8px !important;
-}
-.bm-sidebar #tcomment input::placeholder, .bm-sidebar #tcomment textarea::placeholder, .bm-sidebar #tcomment .el-input__inner::placeholder, .bm-sidebar #tcomment .el-textarea__inner::placeholder, .bm-sidebar #tcomment .tk-input::placeholder{ color:rgba(255,255,255,.85) !important; }
-.bm-sidebar #tcomment input:focus, .bm-sidebar #tcomment textarea:focus, .bm-sidebar #tcomment .el-input__inner:focus, .bm-sidebar #tcomment .el-textarea__inner:focus{ border-color:#79b7ff !important; outline:none !important; }
-
-/* Force meta fields stacked one-per-line */
-.bm-sidebar #tcomment .tk-meta, .bm-sidebar #tcomment .tk-submit .tk-meta, .bm-sidebar #tcomment .tk-meta-input, .bm-sidebar #tcomment .el-row.tk-meta{ display:flex !important; flex-direction:column !important; gap:12px !important; width:100% !important; }
-.bm-sidebar #tcomment .tk-meta > *, .bm-sidebar #tcomment .tk-meta-input > *{ width:100% !important; }
-
-/* Re-show Website field in case previous rules hid it */
-.bm-sidebar #tcomment .tk-meta .tk-col:nth-child(3){ display:block !important; visibility:visible !important; width:100% !important; height:auto !important; margin:0 !important; padding:0 !important; position:static !important; opacity:1 !important; pointer-events:auto !important; }
-
-/* Buttons */
-.bm-sidebar #tcomment .el-button--primary{ background:#0b6fc4 !important; border-color:#0b6fc4 !important; color:#fff !important; }
-.bm-sidebar #tcomment .el-button--primary:hover{ background:#095fa9 !important; border-color:#095fa9 !important; }
-.bm-sidebar #tcomment .el-button.is-disabled, .bm-sidebar #tcomment .el-button.is-disabled:focus, .bm-sidebar #tcomment .el-button.is-disabled:hover{ background:rgba(255,255,255,.25) !important; color:rgba(255,255,255,.8) !important; border-color:rgba(255,255,255,.25) !important; }
-
-/* Replies guide line */
-.bm-sidebar #tcomment .tk-replies{ border-left:2px solid rgba(255,255,255,.2) !important; padding-left:15px !important; }
-
-/* Fix: toolbar icons gigantic on some browsers — constrain icon dimensions */
-.bm-sidebar #tcomment .tk-submit-action-icon .tk-icon button{
-  width:36px !important; height:36px !important; padding:0 !important;
-  display:flex !important; align-items:center !important; justify-content:center !important;
-}
-.bm-sidebar #tcomment .tk-submit-action-icon .tk-icon img,
-.bm-sidebar #tcomment .tk-submit-action-icon .tk-icon svg,
-.bm-sidebar #tcomment .tk-submit-action-icon a img{
-  width:22px !important; height:22px !important; max-width:22px !important; max-height:22px !important;
-  object-fit:contain !important; display:inline-block !important;
-}
-/* Stronger clamp for SVG toolbar icons to avoid inheriting global svg size rules */
-.bm-sidebar #tcomment .tk-submit-action-icon svg{
-  width:22px !important; height:22px !important; max-width:22px !important; max-height:22px !important;
-}
-/* Ensure container row doesn’t stretch children unexpectedly */
-.bm-sidebar #tcomment .tk-row.actions, .bm-sidebar #tcomment .tk-row-actions-start{
-  align-items:center !important;
+.twikoo .tk-submit-action-icon {
+    display: flex !important;
+    justify-content: flex-end !important;
+    margin-top: 18px !important;
 }
 
+.twikoo .tk-submit-action-icon .tk-icon,
+.twikoo .tk-preview,
+.twikoo button.tk-preview,
+.twikoo .tk-owo,
+.twikoo .OwO,
+.twikoo .tk-extra-info,
+.twikoo .tk-like,
+.twikoo .tk-recall,
+.twikoo .tk-operation {
+    display: none !important;
+}
 
+.twikoo .tk-send,
+.twikoo button.tk-send {
+    width: 100% !important;
+    background: #4d86ff !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 12px 0 !important;
+    border-radius: 999px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.4px !important;
+    cursor: pointer !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
 
-/* Global clamp inside Twikoo: prevent oversized toolbar icons regardless of container */
-.twikoo .tk-submit-action-icon .tk-icon button{ width:36px !important; height:36px !important; padding:0 !important; display:inline-flex !important; align-items:center !important; justify-content:center !important; }
-.twikoo .tk-submit-action-icon svg,
-.twikoo .tk-submit-action-icon img{ width:22px !important; height:22px !important; max-width:22px !important; max-height:22px !important; object-fit:contain !important; }
-.twikoo .tk-submit-action-icon{ gap:10px !important; align-items:center !important; }
+.twikoo .tk-send:hover,
+.twikoo button.tk-send:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 12px 26px rgba(77, 134, 255, 0.3) !important;
+}
 
-/* Ultimate clamp: any svg within Twikoo submit area */
-.twikoo .tk-submit svg{ width:22px !important; height:22px !important; max-width:22px !important; max-height:22px !important; display:inline-block !important; }
+.twikoo .tk-counter,
+.twikoo .tk-word-num {
+    color: rgba(180, 200, 232, 0.7) !important;
+    font-size: 12px !important;
+    text-align: right !important;
+}
+
+.twikoo .tk-comment {
+    padding: 20px !important;
+    margin-bottom: 18px !important;
+}
+
+.twikoo .tk-comment:last-child {
+    margin-bottom: 0 !important;
+}
+
+.twikoo .tk-comment .tk-nick {
+    font-weight: 700 !important;
+    color: #ffffff !important;
+}
+
+.twikoo .tk-comment .tk-time {
+    font-size: 12px !important;
+    color: rgba(189, 206, 238, 0.65) !important;
+}
+
+.twikoo .tk-comment .tk-content {
+    margin-top: 10px !important;
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+    color: #dbe4ff !important;
+}
+
+.twikoo .tk-comment .tk-replies {
+    border-left: 2px solid rgba(127, 180, 255, 0.25) !important;
+    margin-left: 10px !important;
+    padding-left: 16px !important;
+}
+
+.twikoo .tk-empty {
+    text-align: center !important;
+    padding: 36px 16px !important;
+    color: rgba(186, 204, 235, 0.7) !important;
+    font-size: 15px !important;
+}
+
+.twikoo .tk-expand {
+    background: transparent !important;
+    color: #9ec4ff !important;
+    border: 1px solid rgba(127, 180, 255, 0.45) !important;
+    padding: 10px 28px !important;
+    border-radius: 999px !important;
+    font-size: 14px !important;
+    margin: 0 auto !important;
+    display: inline-block !important;
+    cursor: pointer !important;
+    transition: border-color 0.2s ease, color 0.2s ease !important;
+}
+
+.twikoo .tk-expand:hover {
+    border-color: rgba(178, 205, 255, 0.85) !important;
+    color: #ffffff !important;
+}
+
+.twikoo .tk-footer,
+.twikoo .tk-power,
+.twikoo .tk-admin-config,
+.twikoo .tk-extras {
+    display: none !important;
+}
+
+.bm-sidebar #tcomment .twikoo,
+.bm-sidebar #tcomment .tk-submit,
+.bm-sidebar #tcomment .tk-comment {
+    background: rgba(10, 18, 33, 0.95) !important;
+    border: 1px solid rgba(54, 88, 148, 0.45) !important;
+}
+
+.bm-sidebar #tcomment .tk-input,
+.bm-sidebar #tcomment .tk-textarea {
+    background: rgba(10, 19, 34, 0.95) !important;
+    color: #f5f8ff !重要;
+}
+
+@media (max-width: 992px) {
+    .comments-column {
+        padding: 24px;
+        border-radius: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .comments-column {
+        padding: 20px;
+        border-radius: 16px;
+        gap: 20px;
+    }
+
+    .twikoo .tk-submit {
+        padding: 18px !important;
+    }
+
+    .twikoo .tk-input,
+    .twikoo .tk-textarea {
+        font-size: 16px !important;
+    }
+
+    .twikoo .tk-submit-action-icon {
+        justify-content: center !important;
+    }
+
+    .twikoo .tk-send {
+        width: 100% !important;
+    }
+}
