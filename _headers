@@ -3,7 +3,7 @@
 
 /*
   # Security headers for comments system
-  Content-Security-Policy: default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://api.github.com https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://*.revenuecpmgate.com https://*.adsterra.com; connect-src 'self' https://api.github.com https://www.google-analytics.com https://*.doubleclick.net https://*.googlesyndication.com https://*.revenuecpmgate.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; frame-src https://*.googlesyndication.com https://*.google.com https://*.revenuecpmgate.com
+  Content-Security-Policy: default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://api.github.com https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://*.revenuecpmgate.com https://*.adsterra.com; connect-src 'self' https://api.github.com https://www.google-analytics.com https://*.doubleclick.net https://*.googlesyndication.com https://*.revenuecpmgate.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; frame-src https://2games.io https://*.2games.io https://*.googlesyndication.com https://*.google.com https://*.revenuecpmgate.com
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
