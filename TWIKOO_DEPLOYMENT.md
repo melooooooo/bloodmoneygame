@@ -129,7 +129,7 @@ envId: 'https://twikoo-bloodmoney.实际用户名.workers.dev',
 
 2. **更新游戏页面**
 
-在每个游戏页面（如 `index.html`、`bloodmoney-2.html` 等）进行以下修改：
+在每个游戏页面（如 `index.html`、`BloodMoney2.html` 等）进行以下修改：
 
 **在 `<head>` 部分添加：**
 ```html

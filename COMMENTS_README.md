@@ -42,7 +42,7 @@ bloodmoneygame/
 │       ├── security.js        # 安全和反垃圾模块
 │       └── config.js          # 配置管理
 ├── index.html                 # 主页（已集成评论系统）
-├── bloodmoney-2.html         # BloodMoney 2页面（已集成）
+├── BloodMoney2.html         # BloodMoney 2页面（已集成）
 ├── COMMENTS_README.md        # 使用说明（本文件）
 └── COMMENTS_TESTING.md       # 测试指南
 ```
@@ -80,7 +80,7 @@ window.GITHUB_TOKEN = 'your_token';
 ### 自动集成
 评论系统已自动集成到以下页面：
 - `index.html` (BloodMoney主页)
-- `bloodmoney-2.html` (BloodMoney 2页面)
+- `BloodMoney2.html` (BloodMoney 2页面)
 
 ### 手动添加到其他页面
 

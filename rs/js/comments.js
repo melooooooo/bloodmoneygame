@@ -640,7 +640,7 @@ function getGameIdFromPage() {
         'index.html': 'bloodmoney',
         '': 'bloodmoney',
         '/': 'bloodmoney',
-        'bloodmoney-2.html': 'bloodmoney-2',
+        'BloodMoney2.html': 'bloodmoney2',
         'bloodmoney-unblocked.html': 'bloodmoney-unblocked',
         'the-baby-in-yellow.html': 'the-baby-in-yellow',
         'buckshot-roulette.html': 'buckshot-roulette',

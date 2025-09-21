@@ -49,7 +49,7 @@ bloodmoneygame/
 ├── 404.html                   # Custom 404 error page
 ├── robots.txt                 # Search engine crawling rules
 ├── sitemap.xml               # XML sitemap for search engines
-├── bloodmoney-2.html         # Individual game pages
+├── BloodMoney2.html         # Individual game pages
 ├── bloodmoney-unblocked.html
 ├── [other game pages...]
 └── rs/                       # Resources directory

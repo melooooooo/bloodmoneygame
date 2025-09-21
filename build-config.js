@@ -62,7 +62,7 @@ async function injectBuildTimeConfig() {
 }
 
 async function injectMetaTags(config) {
-    const htmlFiles = ['index.html', 'bloodmoney-2.html'];
+    const htmlFiles = ['index.html', 'BloodMoney2.html'];
     
     for (const htmlFile of htmlFiles) {
         try {
