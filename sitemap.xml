@@ -89,6 +89,17 @@
   </url>
   
   <url>
+    <loc>https://bloodmoney.ink/lovemoney.html</loc>
+    <lastmod>2025-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://bloodmoney.ink/rs/imgs/lovemoney.png</image:loc>
+      <image:title>LoveMoney</image:title>
+    </image:image>
+  </url>
+  
+  <url>
     <loc>https://bloodmoney.ink/do-not-take-this-cat-home.html</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
