@@ -143,4 +143,16 @@
       <image:title>Italian Brainrot Clicker</image:title>
     </image:image>
   </url>
+
+  <!-- New: 99 Nights in the Forest -->
+  <url>
+    <loc>https://bloodmoney.ink/99-nights-in-the-forest.html</loc>
+    <lastmod>2025-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://bloodmoney.ink/rs/imgs/bloodmoney.png</image:loc>
+      <image:title>99 Nights in the Forest</image:title>
+    </image:image>
+  </url>
 </urlset>
