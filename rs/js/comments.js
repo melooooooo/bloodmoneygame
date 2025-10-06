@@ -660,7 +660,13 @@ function getGameIdFromPage() {
         'do-not-take-this-cat-home': 'do-not-take-this-cat-home',
         'do-not-take-this-cat-home.html': 'do-not-take-this-cat-home',
         'italian-brainrot-clicker': 'italian-brainrot-clicker',
-        'italian-brainrot-clicker.html': 'italian-brainrot-clicker'
+        'italian-brainrot-clicker.html': 'italian-brainrot-clicker',
+        'lovemoney': 'lovemoney',
+        'lovemoney.html': 'lovemoney',
+        'human-expenditure-program': 'human-expenditure-program',
+        'human-expenditure-program.html': 'human-expenditure-program',
+        '99-nights-in-the-forest': '99-nights-in-the-forest',
+        '99-nights-in-the-forest.html': '99-nights-in-the-forest'
     };
 
     return gameMapping[filename] || gameMapping[path] || 'bloodmoney';

@@ -35,7 +35,8 @@ function main() {
   const files = walkHtmlFiles(ROOT);
   const urls = files.map((f) => {
     const rel = path.relative(ROOT, f).replace(/\\/g, '/');
-    const loc = rel === 'index.html' ? `${BASE_URL}/` : `${BASE_URL}/${rel}`;
+    const cleanedPath = rel === 'index.html' ? '/' : `/${rel}`;
+    const loc = `${BASE_URL}${cleanedPath.replace(/\.html$/, '')}`;
     const stat = fs.statSync(f);
     const lastmod = formatDateISO(stat.mtime);
     const priority = rel === 'index.html' ? '1.0' : '0.8';

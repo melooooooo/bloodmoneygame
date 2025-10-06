@@ -99,6 +99,28 @@
     </image:image>
   </url>
   
+  <url>
+    <loc>https://bloodmoney.ink/lovemoney</loc>
+    <lastmod>2025-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://bloodmoney.ink/rs/imgs/lovemoney.png</image:loc>
+      <image:title>LoveMoney</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://bloodmoney.ink/human-expenditure-program</loc>
+    <lastmod>2025-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://bloodmoney.ink/rs/imgs/human-expenditure-program.jpg</image:loc>
+      <image:title>Human Expenditure Program</image:title>
+    </image:image>
+  </url>
+  
   <!-- Other Games -->
   <url>
     <loc>https://bloodmoney.ink/we-become-what-we-behold</loc>
@@ -119,6 +141,17 @@
     <image:image>
       <image:loc>https://bloodmoney.ink/rs/imgs/italianbrainrotclicker.jpg</image:loc>
       <image:title>Italian Brainrot Clicker</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://bloodmoney.ink/99-nights-in-the-forest</loc>
+    <lastmod>2025-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://bloodmoney.ink/rs/imgs/99-nights-in-the-forest.jpg</image:loc>
+      <image:title>99 Nights in the Forest</image:title>
     </image:image>
   </url>
 </urlset>
